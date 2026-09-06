@@ -2,4 +2,4 @@ helloooo
 
 [back](..)
 
-[deeper?](hi)
+[deeper?](/sub/hi)
