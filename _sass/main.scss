@@ -136,3 +136,15 @@ h1, h2, h3 {
 nav a {
     @extend .button;
 }
+
+::selection {
+    background: $accent_1;
+    color: $txt_dark_1;
+}
+
+mark:not(.blank) {
+    background: $accent_1;
+    color: $txt_dark_1;
+    padding: 2px 6px;
+    border-radius: 999px;
+}
