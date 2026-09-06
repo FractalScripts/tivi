@@ -1,3 +1,7 @@
+---
+layout: default
+title: hey its me
+---
 # title test
 
 wahoo :D
