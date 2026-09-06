@@ -1,18 +1,24 @@
-// Base Hue
-$hue: 165;
+// Hues
+$hue_primary: 165;
+$hue_red: 5;
+
+// Root Hue Application
+:root {
+    --hue: #{$hue_primary};
+}
 
 // Accents
-$accent_1: hsl($hue, 100%, 50%);
-$accent_2: hsl($hue, 80%, 40%);
+$accent_1: hsl(var(--hue), 100%, 50%);
+$accent_2: hsl(var(--hue), 80%, 40%);
 
 // Backgrounds
-$bg_1: hsl($hue, 5%, 5%);
-$bg_2: hsl($hue, 13%, 17%);
+$bg_1: hsl(var(--hue), 5%, 5%);
+$bg_2: hsl(var(--hue), 13%, 17%);
 
 // Text
 $txt_1: hsl(0, 0%, 93%);
 // Dark Text
-$txt_dark_1: hsl($hue, 11%, 7%);
+$txt_dark_1: hsl(var(--hue), 11%, 7%);
 
 // Other
 $border_1: hsl(0, 0%, 20%);
@@ -40,6 +46,8 @@ $border_1: hsl(0, 0%, 20%);
     transform: translateY(2px);
     box-shadow: 0 1px 0 $accent_2;
 }
+
+.button.red { --hue: #{$hue_red}; }
 
 // ---------------------------------------- //
 
