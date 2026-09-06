@@ -26,3 +26,12 @@ img {
 h1, h2, h3 {
     line-height: 1.2;
 }
+
+nav a {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    background: #252530;
+    color: #00ffc0;
+}
