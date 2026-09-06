@@ -34,4 +34,11 @@ nav a {
     text-decoration: none;
     background: #252530;
     color: #00ffc0;
+    transition: 0.15s;
+}
+
+nav a:hover {
+    background: #00ffc0;
+    color: #101014;
+    transform: translateY(2px);
 }
