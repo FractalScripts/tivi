@@ -17,6 +17,36 @@ $txt_dark_1: hsl($hue, 11%, 7%);
 // Other
 $border_1: hsl(0, 0%, 20%);
 
+// Classes
+// ---------------------------------------- //
+
+.button {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    background: $bg_2;
+    color: $accent_1;
+    font-weight: 900;
+
+    box-shadow: 0 3px 0 $accent_2;
+    transition: 0.15s ease;
+}
+
+.button:hover {
+    background: $accent_1;
+    color: $txt_dark_1;
+    
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 $accent_2;
+}
+
+// ---------------------------------------- //
+
+
+// Other
+// ---------------------------------------- //
+
 body {
     max-width: 900px;
     margin: 40px auto;
@@ -47,22 +77,5 @@ h1, h2, h3 {
 }
 
 nav a {
-    display: inline-block;
-    padding: 8px 14px;
-    border-radius: 999px;
-    text-decoration: none;
-    background: $bg_2;
-    color: $accent_1;
-    font-weight: 900;
-
-    box-shadow: 0 3px 0 $accent_2;
-    transition: 0.15s ease;
-}
-
-nav a:hover {
-    background: $accent_1;
-    color: $txt_dark_1;
-    
-    transform: translateY(2px);
-    box-shadow: 0 1px 0 $accent_2;
+    @extend .button;
 }
