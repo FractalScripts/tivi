@@ -1,6 +1,14 @@
 // Hues
 $hue_primary: 165;
-$hue_red: 5;
+$hue_red: 0;
+$hue_orange: 30;
+$hue_yellow: 50;
+$hue_lime: 100;
+$hue_cyan: 180;
+$hue_blue: 215;
+$hue_marine: 235;
+$hue_purple: 275;
+$hue_pink: 310;
 
 // Root Hue Application
 :root {
@@ -22,6 +30,17 @@ $txt_dark_1: hsl(var(--hue), 11%, 7%);
 
 // Other
 $border_1: hsl(0, 0%, 20%);
+
+// Color Palette Classes
+.red { --hue: #{$hue_red}; }
+.orange { --hue: #{$hue_orange}; }
+.yellow { --hue: #{$hue_yellow}; }
+.lime { --hue: #{$hue_lime}; }
+.cyan { --hue: #{$hue_cyan}; }
+.blue { --hue: #{$hue_blue}; }
+.marine { --hue: #{$hue_marine}; }
+.purple { --hue: #{$hue_purple}; }
+.pink { --hue: #{$hue_pink}; }
 
 // Classes
 // ---------------------------------------- //
@@ -46,8 +65,6 @@ $border_1: hsl(0, 0%, 20%);
     transform: translateY(2px);
     box-shadow: 0 1px 0 $accent_2;
 }
-
-.button.red { --hue: #{$hue_red}; }
 
 // ---------------------------------------- //
 
