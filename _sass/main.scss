@@ -1,21 +1,21 @@
 // Base Hue
-$hue: 165
+$hue: 165;
 
 // Accents
-$accent_1: hsl($hue, 100%, 50%)
-$accent_2: hsl($hue, 80%, 40%)
+$accent_1: hsl($hue, 100%, 50%);
+$accent_2: hsl($hue, 80%, 40%);
 
 // Backgrounds
-$bg_1: hsl($hue, 5%, 5%)
-$bg_2: hsl($hue, 13%, 17%)
+$bg_1: hsl($hue, 5%, 5%);
+$bg_2: hsl($hue, 13%, 17%);
 
 // Text
-$txt_1: hsl(0, 0%, 93%)
+$txt_1: hsl(0, 0%, 93%);
 // Dark Text
-$txt_dark_1: hsl($hue, 11%, 7%)
+$txt_dark_1: hsl($hue, 11%, 7%);
 
 // Other
-$border_1: hsl(0, 0%, 20%)
+$border_1: hsl(0, 0%, 20%);
 
 body {
     max-width: 900px;
