@@ -59,7 +59,7 @@ nav a {
 }
 
 nav a:hover {
-    background: #accent_1;
+    background: $accent_1;
     color: $txt_dark_1;
     
     transform: translateY(2px);
