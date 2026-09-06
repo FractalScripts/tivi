@@ -75,20 +75,20 @@ $border_1: hsl(0, 0%, 20%);
 
 .tiltleft {
     display: inline-block;
-    transition: transform 0.5s ease;
+    transition: transform 0.1s ease;
 }
 
 .tiltleft:hover {
-    transform: rotate(-10deg);
+    transform: rotate(-5deg);
 }
 
 .tiltright {
     display: inline-block;
-    transition: transform 0.5s ease;
+    transition: transform 0.1s ease;
 }
 
 .tiltright:hover {
-    transform: rotate(10deg);
+    transform: rotate(5deg);
 }
 
 // ---------------------------------------- //
