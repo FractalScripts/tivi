@@ -89,7 +89,7 @@ hr {
     border-top: 5px solid $border_1;
 }
 
-a {
+a:not(.blank) {
     color: $accent_1;
 }
 
