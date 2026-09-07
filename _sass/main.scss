@@ -18,12 +18,12 @@ $hue_pink: 310;
 }
 
 // Palette Syntax Generator
-@function col-hsl($hue, $sat, $lht, $dark) {
+@function col-hsl($hue, $sat, $lht, $dark: false) {
     @if $hue == default {
         $hue: var(--hue);
     }
     
-    @if $dark == dark or $dark == true {
+    @if $dark == true or $dark == dark {
         $lht_out: calc(var(--lht)*var(--lht_override_dark, #{$lht}));
     } @else {
         $lht_out: calc(var(--lht)*var(--lht_override_light, #{$lht}));
