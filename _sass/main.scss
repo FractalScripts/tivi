@@ -29,7 +29,7 @@ $txt_1: hsl(0, 0%, 93%);
 $txt_dark_1: hsl(var(--hue), 11%, 7%);
 
 // Other
-$border_1: hsl(var(---hue), 10%, 20%);
+$border_1: hsl(var(--hue), 10%, 20%);
 
 // Color Palette Classes
 .red { --hue: #{$hue_red}; }
@@ -113,6 +113,7 @@ body {
 hr {
     border: 0;
     border-top: 5px solid $border_1;
+    margin: 30px 0;
 }
 
 a:not(.blank) {
