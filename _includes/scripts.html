@@ -1,0 +1,13 @@
+<script>
+  <!--  -->
+  function copyText(button, text) {
+    navigator.clipboard.writeText(text);
+
+    const originalText = button.textContent;
+    button.textContent = "Copied!";
+
+    setTimeout(() => {
+      button.textContent = originalText;
+    }, 2000);
+  }
+</script>
