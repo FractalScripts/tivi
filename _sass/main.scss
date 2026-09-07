@@ -18,7 +18,7 @@ $hue_pink: 310;
 }
 
 // Palette Syntax Generator
-@function col-hsl($hue, $sat, $lht, $style = light) {
+@function col-hsl($hue, $sat, $lht, $style: light) {
     @if $hue == default {
         $hue: var(--hue);
     }
