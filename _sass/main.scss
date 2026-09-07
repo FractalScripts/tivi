@@ -13,8 +13,8 @@ $hue_pink: 310;
 // Root Hue Application
 :root {
     --hue: #{$hue_primary};
-    --sat: 1
-    --lht: 1
+    --sat: 1;
+    --lht: 1;
 }
 
 // Palette Syntax Generator
@@ -24,9 +24,9 @@ $hue_pink: 310;
     }
     
     @return hsl(
-        $hue,
-        calc(var(--sat)*$sat),
-        calc(var(--lht)*var(--lht_override, $lht))
+        #{$hue},
+        calc(var(--sat)*#{$sat}),
+        calc(var(--lht)*var(--lht_override, #{$lht}))
     );
 }
 
@@ -47,8 +47,8 @@ $txt_dark_1: col-hsl(default, 11%, 7%);
 $border_1: col-hsl(default, 10%, 20%);
 
 // Color Palette Classes
-.light { --lht: 1.5 }
-.dark { --lht: 0.5 }
+.light { --lht: 1.5; }
+.dark { --lht: 0.5; }
 .red { --hue: #{$hue_red}; }
 .orange { --hue: #{$hue_orange}; }
 .yellow { --hue: #{$hue_yellow}; }
