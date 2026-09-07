@@ -14,7 +14,8 @@ $hue_pink: 310;
 :root {
     --hue: #{$hue_primary};
     --sat: 1;
-    --lht: 1;
+    --lht_light: 1;
+    --lht_dark: 1;
 }
 
 // Palette Syntax Generator
