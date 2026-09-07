@@ -6,6 +6,7 @@ title: Other stuff
 ---
 <br>
 ## games
+
 <details><summary>Minecraft username</summary>
 <button class="button lime" onclick=" navigator.clipboard.writeText('itstivi'); this.textContent = 'copied :D'; ">Java edition</button>
 <button class="button lime" onclick=" navigator.clipboard.writeText('HYPIX9000'); this.textContent = 'copied :D'; ">Bedrock edition</button>
