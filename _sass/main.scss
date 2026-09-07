@@ -49,7 +49,7 @@ $border_1: hsl(var(--hue), 10%, 20%);
 // ---------------------------------------- //
 
 .transition {
-    transition: all 0.15s ease;
+    transition: 0.15s ease;
 }
 
 .button {
@@ -189,10 +189,11 @@ pre {
 
 // Expanding Details
 details {
+    display: inline-block;
     background: $bg_2;
     border-radius: 999px;
     padding: 10px 16px;
-    transition: border-radius 0.15s ease;
+    transition: 0.15s ease;
 }
 
 details[open] {
