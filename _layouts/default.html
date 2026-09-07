@@ -10,6 +10,9 @@
     {% include scripts.html %}
   </head>
   <body>
+    {% if page.url == "/" %}
+      <img src="{{ '/assets/content/tivi.png' | relative_url }}">
+    {% endif %}
     {% include top.html %}
     {{ content }}
   </body>
