@@ -48,6 +48,10 @@ $border_1: hsl(var(--hue), 10%, 20%);
 // Classes
 // ---------------------------------------- //
 
+.transition {
+    transition: all 0.15s ease;
+}
+
 .button {
     appearance: none;
     border: 0;
@@ -79,7 +83,7 @@ $border_1: hsl(var(--hue), 10%, 20%);
 
 .tiltleft {
     display: inline-block;
-    transition: transform 0.1s ease;
+    transition: transform 0.15s ease;
 }
 
 .tiltleft:hover {
@@ -88,7 +92,7 @@ $border_1: hsl(var(--hue), 10%, 20%);
 
 .tiltright {
     display: inline-block;
-    transition: transform 0.1s ease;
+    transition: transform 0.15s ease;
 }
 
 .tiltright:hover {
@@ -101,6 +105,7 @@ $border_1: hsl(var(--hue), 10%, 20%);
 // Other
 // ---------------------------------------- //
 
+// Main
 body {
     max-width: 900px;
     margin: 40px auto;
@@ -114,41 +119,49 @@ body {
     background: $bg_1;
 }
 
+// Divider Line
 hr {
     border: 0;
     border-top: 5px solid $border_1;
     margin: 30px 0;
 }
 
+// Links
 a:not(.blank) {
     color: $accent_1;
 }
 
+// Clear default link appearance
 @layer browser_override {
     a.blank {
         color: inherit;
         text-decoration: none;
     }
 }
-    
+
+// Images
 img {
     max-width: 100%;
     height: auto;
 }
 
+// Header Text
 h1, h2, h3 {
     line-height: 1.2;
 }
 
+// Navbar
 nav a {
     @extend .button;
 }
 
+// Text Selection
 ::selection {
     background: $accent_1;
     color: $txt_dark_1;
 }
 
+// Highlights -> Pills
 mark:not(.blank) {
     background: $accent_1;
     color: $txt_dark_1;
@@ -156,6 +169,7 @@ mark:not(.blank) {
     border-radius: 999px;
 }
 
+// Code / Codeblocks
 pre, code {
     background: $bg_2;
     font-family: "Jetbrains Mono", ui-monospace, monospace;
@@ -171,4 +185,21 @@ pre {
     padding: 16px;
     border-radius: 12px;
     overflow-x: auto;
+}
+
+// Expanding Details
+details {
+    background: $bg_2;
+    border-radius: 999px;
+    padding: 10px 16px;
+    transition: border-radius 0.15s ease;
+}
+
+details[open] {
+    border-radius: 12px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 900;
 }
