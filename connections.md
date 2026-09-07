@@ -7,7 +7,7 @@ title: Other stuff
 
 ## games
 <details><summary>Minecraft username</summary>
-<button class="button lime dark" onclick="copyText(this, 'itstivi')">Java edition</button>
-<button class="button lime dark" onclick="copyText(this, 'HYPIX9000')">Bedrock edition</button>
+<button class="button dark accent" onclick="copyText(this, 'itstivi')">Java edition</button>
+<button class="button dark accent" onclick="copyText(this, 'HYPIX9000')">Bedrock edition</button>
 <a href="https://namemc.com/profile/itstivi.2" class="button black">Name MC</a>
 </details>
