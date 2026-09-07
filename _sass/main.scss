@@ -18,17 +18,15 @@ $hue_pink: 310;
 }
 
 // Palette Syntax Generator
-@function col-hsl($hue, $sat, $lht, $style: light) {
+@function col-hsl($hue, $sat, $lht, $dark) {
     @if $hue == default {
         $hue: var(--hue);
     }
-
-    @if $style == light {
-        $lht_out: calc(var(--lht)*var(--lht_override_light, #{$lht}));
-    }
-
-    @if $style == dark {
+    
+    @if $dark == dark or $dark == true {
         $lht_out: calc(var(--lht)*var(--lht_override_dark, #{$lht}));
+    } @else {
+        $lht_out: calc(var(--lht)*var(--lht_override_light, #{$lht}));
     }
     
     @return hsl(
@@ -44,7 +42,7 @@ $accent_2: col-hsl(default, 80%, 40%);
 
 // Backgrounds
 $bg_1: col-hsl(default, 10%, 10%, dark);
-$bg_2: col-hsl(default, 13%, 17%, dakr);
+$bg_2: col-hsl(default, 13%, 17%, dark);
 
 // Text
 $txt_1: col-hsl(0, 0%, 93%);
