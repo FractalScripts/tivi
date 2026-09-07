@@ -49,6 +49,10 @@ $border_1: hsl(var(--hue), 10%, 20%);
 // ---------------------------------------- //
 
 .button {
+    appearance: none;
+    border: 0;
+    outline: none;
+    
     display: inline-block;
     padding: 8px 14px;
     border-radius: 999px;
