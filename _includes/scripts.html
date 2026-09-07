@@ -1,11 +1,17 @@
+<!--
+
+Scripts:
+copyText: Preset behaviour for a button that copies text onto the clipboard
+
+-->
 <script>
-  <!--  -->
-  function copyText(button, text) {
+  function copyText(button, text, copytext = "Copied!") {
+    
     navigator.clipboard.writeText(text);
-
+    
     const originalText = button.textContent;
-    button.textContent = "Copied!";
-
+    button.textContent = copytext;
+    
     setTimeout(() => {
       button.textContent = originalText;
     }, 2000);
