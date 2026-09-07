@@ -22,7 +22,8 @@ $hue_pink: 310;
     @if $hue == default {
         $hue: var(--hue);
     }
-    
+
+    $lht_out: null;    
     @if $dark == true or $dark == dark {
         $lht_out: calc(var(--lht)*var(--lht_override_dark, #{$lht}));
     } @else {
