@@ -25,9 +25,9 @@ $hue_pink: 310;
 
     $lht_out: null;    
     @if $dark == true or $dark == dark {
-        $lht_out: calc(var(--lht)*var(--lht_override_dark, #{$lht}));
+        $lht_out: calc(var(--lht_dark)*var(--lht_override_dark, #{$lht}));
     } @else {
-        $lht_out: calc(var(--lht)*var(--lht_override_light, #{$lht}));
+        $lht_out: calc(var(--lht_light)*var(--lht_override_light, #{$lht}));
     }
     
     @return hsl(
@@ -54,8 +54,8 @@ $txt_dark_1: col-hsl(default, 11%, 7%, dark);
 $border_1: col-hsl(default, 10%, 20%);
 
 // Color Palette Classes
-.light { --lht: 1.5; }
-.dark { --lht: 0.5; }
+.light { --lht_light: 1.5; --lht_dark: 1.5; }
+.dark { --lht_light: 0.5; --lht_dark: 1; }
 .red { --hue: #{$hue_red}; }
 .orange { --hue: #{$hue_orange}; }
 .yellow { --hue: #{$hue_yellow}; }
