@@ -13,25 +13,42 @@ $hue_pink: 310;
 // Root Hue Application
 :root {
     --hue: #{$hue_primary};
+    --sat: 1
+    --lht: 1
+}
+
+// Palette Syntax Generator
+@function col-hsl($hue, $sat, $lht) {
+    @if $hue == default {
+        $hue: var(--hue);
+    }
+    
+    @return hsl(
+        $hue,
+        calc(var(--sat)*$sat),
+        calc(var(--lht)*var(--lht_override, $lht))
+    );
 }
 
 // Accents
-$accent_1: hsl(var(--hue), 100%, 50%);
-$accent_2: hsl(var(--hue), 80%, 40%);
+$accent_1: col-hsl(default, 100%, 50%);
+$accent_2: col-hsl(default, 80%, 40%);
 
 // Backgrounds
-$bg_1: hsl(var(--hue), 10%, 10%);
-$bg_2: hsl(var(--hue), 13%, 17%);
+$bg_1: col-hsl(default, 10%, 10%);
+$bg_2: col-hsl(default, 13%, 17%);
 
 // Text
-$txt_1: hsl(0, 0%, 93%);
+$txt_1: col-hsl(0, 0%, 93%);
 // Dark Text
-$txt_dark_1: hsl(var(--hue), 11%, 7%);
+$txt_dark_1: col-hsl(default, 11%, 7%);
 
 // Other
-$border_1: hsl(var(--hue), 10%, 20%);
+$border_1: col-hsl(default, 10%, 20%);
 
 // Color Palette Classes
+.light { --lht: 1.5 }
+.dark { --lht: 0.5 }
 .red { --hue: #{$hue_red}; }
 .orange { --hue: #{$hue_orange}; }
 .yellow { --hue: #{$hue_yellow}; }
@@ -41,6 +58,9 @@ $border_1: hsl(var(--hue), 10%, 20%);
 .marine { --hue: #{$hue_marine}; }
 .purple { --hue: #{$hue_purple}; }
 .pink { --hue: #{$hue_pink}; }
+.white { --sat: 0; --lht_override: 100%; }
+.gray { --sat: 0; --lht_override: 50%; }
+.black { --sat: 0; --lht_override: 0%; }
 
 // Browser Override Layer
 @layer browser_override;
