@@ -101,6 +101,7 @@ body {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
+    box-sizing: border-box;
 
     font-family: "Inter", system-ui, sans-serif;
     line-height: 1.6;
@@ -127,6 +128,7 @@ a:not(.blank) {
     
 img {
     max-width: 100%;
+    height: auto;
 }
 
 h1, h2, h3 {
