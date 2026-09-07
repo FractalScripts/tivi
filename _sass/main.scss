@@ -69,7 +69,7 @@ $border_1: col-hsl(default, 10%, 20%);
 .white { --sat: 0; --lht_override_light: 100%; --lht_override_dark: 0%; }
 .l_gray { --sat: 0; --lht_override_light: 66%; --lht_override_dark: 33%; }
 .d_gray { --sat: 0; --lht_override_light: 33%; --lht_override_dark: 66%; }
-.black { --sat: 0; --lht_override_light: 0%; --lht_override_dark: 100% }
+.black { --sat: 0; --lht_override_light: 0%; --lht_override_dark: 100%; }
 
 // Browser Override Layer
 @layer browser_override;
