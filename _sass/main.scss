@@ -67,10 +67,10 @@ $border_1: col-hsl(default, 10%, 20%);
 .marine { --hue: #{$hue_marine}; }
 .purple { --hue: #{$hue_purple}; }
 .pink { --hue: #{$hue_pink}; }
-.white { --sat: 0; --lht_override_light: 100%; --lht_override_dark: 0%; }
-.l_gray { --sat: 0; --lht_override_light: 66%; --lht_override_dark: 33%; }
-.d_gray { --sat: 0; --lht_override_light: 33%; --lht_override_dark: 66%; }
-.black { --sat: 0; --lht_override_light: 0%; --lht_override_dark: 100%; }
+.white { --sat: 0; --lht_override_light: 90%; --lht_override_dark: 10%; }
+.l_gray { --sat: 0; --lht_override_light: 60%; --lht_override_dark: 30%; }
+.d_gray { --sat: 0; --lht_override_light: 30%; --lht_override_dark: 60%; }
+.black { --sat: 0; --lht_override_light: 10%; --lht_override_dark: 90%; }
 
 // Browser Override Layer
 @layer browser_override;
