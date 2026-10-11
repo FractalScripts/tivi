@@ -1,5 +1,5 @@
 ---
-title: Other stuff
+title: connections
 ---
 ## socials / content :0
 {% include socialbuttons.md %}
