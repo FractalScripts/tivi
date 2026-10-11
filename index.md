@@ -1,5 +1,7 @@
 {% include socialbuttons.md %}
 
+---
+
 ## hii! welcome
 
 call me Tivi / Fractal
@@ -7,8 +9,9 @@ call me Tivi / Fractal
 
 ---
 
-i do animations and some programming
+i do animations and some programming :3
 
-tech enthusiast, Science enthusiast
-
-<a href="/games" class="button">games i play</a>
+⠀ ／l、
+（ﾟ､ ｡ ７
+⠀ l、ﾞ ~ヽ
+  じしf_, )ノ
