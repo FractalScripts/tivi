@@ -12,9 +12,9 @@ call me Tivi / Fractal
 i do animations and some programming :3
 
 ⠀ ／l、
-（ﾟ､ ｡ ７
-⠀ l、ﾞ ~ヽ
-  じしf_, )ノ
 
-hello test
-wae
+（ﾟ､ ｡ ７
+
+⠀ l、ﾞ ~ヽ
+
+  じしf_, )ノ
