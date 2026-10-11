@@ -13,5 +13,5 @@ i do animations and some programming :3
 
 &nbsp;&nbsp;&nbsp;／l、\
 （ﾟ､ ｡ ７\
-&nbsp;&nbsp;l、ﾞ ~ヽ\
+&nbsp;&nbsp;&nbsp;l、ﾞ ~ヽ\
 &nbsp;&nbsp;じしf_, )ノ\
