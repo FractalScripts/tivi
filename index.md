@@ -13,3 +13,6 @@ tech enthusiast, Science enthusiast
 
 i <3 minecraft
 
+<details><summary>games i play :D</summary>
+
+</details>
