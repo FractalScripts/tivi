@@ -15,13 +15,11 @@
   if (grid && listElement && templateElement) {
     const template = templateElement.innerHTML;
     
-    // Split the cards by looking for a clean line break with three dashes
-    const cardData = listElement.textContent.split('\n---');
+    // Split the cards using a basic string method
+    const cardData = listElement.textContent.split('---');
     
     cardData.forEach(item => {
       let html = template;
-      
-      // Split the text into lines by normal newlines
       const lines = item.split('\n');
       
       lines.forEach(line => {
@@ -31,10 +29,12 @@
         const key = line.substring(0, colonIndex).trim();
         let value = line.substring(colonIndex + 1).trim();
         
-        // NO REGEX: Strip out invisible Windows carriage returns using simple text splitting
-        value = value.split\(('\r').\)join('');
+        // NO REGEX OR TOKENS: Uses basic character extraction to strip carriage bytes
+        if (value.charCodeAt(value.length - 1) === 13) {
+          value = value.substring(0, value.length - 1);
+        }
         
-        html = html.replaceAll(`{{${key}}}`, value);
+        html = html.replaceAll('{{' + key + '}}', value);
       });
       
       grid.insertAdjacentHTML('beforeend', html);
