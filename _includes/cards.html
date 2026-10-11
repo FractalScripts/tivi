@@ -8,96 +8,6 @@
 </template>
 
 <script>
-  { // Isolated block scope prevents variable collision crashes
-    console.log("%c[Card Machine Debugger] Starting System Scan...", "color: cyan; font-weight: bold;");
-
-    // 1. Fetch DOM elements fresh using unique names to prevent ReferenceErrors
-    const dbgGrid = document.getElementById('cardgrid');
-    const dbgList = document.getElementById('cardlist');
-    const dbgTemp = document.getElementById('cardtemplate');
-
-    console.log("Step 1: Inspecting DOM elements...");
-    console.log("- #cardgrid found:", dbgGrid);
-    console.log("- #cardlist found:", dbgList);
-    console.log("- #cardtemplate found:", dbgTemp);
-
-    if (!dbgGrid || !dbgList || !dbgTemp) {
-      console.error("❌ CRITICAL HTML ERROR: One or more element IDs ('cardgrid', 'cardlist', 'cardtemplate') do not exist on this page. Script aborted.");
-    } else {
-      try {
-        const template = dbgTemp.innerHTML;
-        console.log("Step 2: HTML Template Structure:", JSON.stringify(template));
-
-        const rawText = dbgList.textContent;
-        console.log("Step 3: Raw Text List Data:", JSON.stringify(rawText));
-
-        // Fallback array splitting to handle missing "---" dividers smoothly
-        const cardData = rawText.includes('---') ? rawText.split('---') : [rawText];
-        console.log(`Step 4: Data successfully separated into (${cardData.length}) card block arrays.`);
-
-        cardData.forEach((item, cardIdx) => {
-          console.log(`%c\n--- Analyzing Card Block #${cardIdx + 1} ---`, "color: yellow; font-weight: bold;");
-          console.log("Raw string context:", JSON.stringify(item));
-          
-          let html = template;
-          const lines = item.split('\n');
-          console.log(`Block contains (${lines.length}) lines of text.`);
-
-          lines.forEach((line, lineIdx) => {
-            if (!line.includes(':')) {
-              const trimmed = line.trim();
-              if (trimmed.length > 0) {
-                console.warn(`  Line ${lineIdx + 1}: Skipping row. Missing colon separator: "${trimmed}"`);
-              }
-              return;
-            }
-
-            const colonIndex = line.indexOf(':');
-            const key = line.substring(0, colonIndex).trim();
-            let value = line.substring(colonIndex + 1).trim();
-
-            // Native carriage evaluation (fixes Windows \(\r\) system line breaks smoothly)
-            if (value.charCodeAt(value.length - 1) === 13) {
-              console.log(`  Line ${lineIdx + 1}: Found carriage break character (\\r). Shaving it.`);
-              value = value.substring(0, value.length - 1);
-            }
-
-            const targetHandle = '{{' + key + '}}';
-            const hasHandle = html.includes(targetHandle);
-            
-            console.log(`  Line ${lineIdx + 1}: Extracted Pair -> [${key}]: "${value}"`);
-            if (!hasHandle) {
-              console.warn(`  ⚠️ Mismatch warning: Your layout template does not contain the handle "${targetHandle}". This value cannot be map-inserted.`);
-            }
-
-            html = html.replaceAll(targetHandle, value);
-          });
-
-          console.log(`Final processed string payload for Card #${cardIdx + 1}:`, JSON.stringify(html));
-          
-          // Execute injection and verify DOM insertion
-          const beforeCount = dbgGrid.children.length;
-          dbgGrid.insertAdjacentHTML('beforeend', html);
-          const afterCount = dbgGrid.children.length;
-
-          if (afterCount > beforeCount) {
-            console.log(`%c✅ SUCCESS: Card #${cardIdx + 1} converted and injected inside the #cardgrid DOM frame layout.`, "color: green; font-weight: bold;");
-          } else {
-            console.error(`❌ GENERATION FAILURE: Custom string failed to compile into valid visual node tree markers inside the target grid.`);
-          }
-        });
-
-        console.log("%c\n--- System Diagnostics Finalized ---", "color: cyan; font-weight: bold;");
-
-      } catch (fatalRuntimeError) {
-        console.error("💥 RUNTIME FAILURE: Engine crashed unexpectedly during string transformation loop:", fatalRuntimeError);
-      }
-    }
-  }
-</script>
-
-<!--
-<script>
   const grid = document.getElementById('cardgrid');
     const listElement = document.getElementById('cardlist');
     const templateElement = document.getElementById('cardtemplate');
@@ -124,4 +34,3 @@
       });
     }
 </script>
--->
