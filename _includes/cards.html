@@ -12,18 +12,13 @@
   const listElement = document.getElementById('cardlist');
   const templateElement = document.getElementById('cardtemplate');
   
-  console.log("--- DIAGNOSTIC CHECK ---");
-  console.log("Grid element:", grid);
-  console.log("List element:", listElement);
-  console.log("Template element:", templateElement);
-
   if (grid && listElement && templateElement) {
     const template = templateElement.innerHTML;
     
-    // Split the text into card chunks by the markdown divider dashes
+    // Split the raw plain-text block into separate card content chunks
     const cardData = listElement.textContent.split(/\n\s*---\s*\n/);
     
-    cardData.forEach((item, index) => {
+    cardData.forEach(item => {
       let html = template;
       const lines = item.split('\n');
       
@@ -33,20 +28,17 @@
         const colonIndex = line.indexOf(':');
         const key = line.substring(0, colonIndex).trim();
         
-        // FIXED SYNTAX: Cleans out invisible carriage returns cleanly
+        // Clean out spaces and hidden carriage lines cleanly with no extra symbols
         const value = line.substring(colonIndex + 1).trim().replace(\(/\r/\)g, '');
         
         html = html.replaceAll(`{{${key}}}`, value);
       });
       
+      // Inject our customized card elements straight into the layout element
       grid.insertAdjacentHTML('beforeend', html);
     });
-    console.log("--- SUCCESS: Cards injected into the layout! ---");
-  } else {
-    console.error("CRITICAL ERROR: One or more HTML elements are missing.");
   }
 </script>
-
 
 <script>
   const grid = document.getElementById('cardgrid');
