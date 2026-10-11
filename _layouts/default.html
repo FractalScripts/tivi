@@ -8,9 +8,7 @@
     <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
     {% include webfonts.html %}
     {% include scripts.html %}
-    {% if page.url == "/oc" %}
-      {% include oc_cards.html %}
-    {% endif %}
+    {% include cards.html %}
   </head>
   <body>
     {% include top.html %}
