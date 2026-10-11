@@ -16,7 +16,7 @@
       
       const template = templateElement.innerHTML; // Get template as string
       
-      const cardData = listElement.textContent.split(/\n\s*---\s*\n/); // Regex match for dividers (===)
+      const cardData = listElement.textContent.trim().split(/^\s*---\s*$/m).filter(item => item.trim()); // Regex match for dividers (---)
       
       cardData.forEach(item => { // For each card
         
