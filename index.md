@@ -2,4 +2,14 @@
 
 ## hii! welcome
 
-Call me Tivi / Fractal
+call me Tivi / Fractal
+###### i also go by ItsTivi / TiviAnimations / FractalBlade online
+
+---
+
+i do animations and some programming
+
+tech enthusiast, Science enthusiast
+
+i <3 minecraft
+
