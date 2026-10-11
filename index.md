@@ -11,8 +11,4 @@ i do animations and some programming
 
 tech enthusiast, Science enthusiast
 
-i <3 minecraft
-
-<details><summary>games i play :D</summary>
-
-</details>
+<a href="/games" class="button">games i play</a>
