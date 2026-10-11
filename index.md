@@ -16,6 +16,6 @@ chronically online
 stereotypical introvert
 
 &nbsp;&nbsp;&nbsp;／l、\
-（ﾟ､ ｡ ７\ 
+（ﾟ､ ｡ ７\
 &nbsp;&nbsp;&nbsp;l、ﾞ ~ヽ\
 &nbsp;&nbsp;じしf_, )ノ\
