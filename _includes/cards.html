@@ -8,38 +8,85 @@
 </template>
 
 <script>
-  const grid = document.getElementById('cardgrid');
-  const listElement = document.getElementById('cardlist');
-  const templateElement = document.getElementById('cardtemplate');
-  
-  if (grid && listElement && templateElement) {
+// --- CRITICAL CONSOLE INVESTIGATOR ---
+console.log("%c[Card Machine] Initiating Full Inspection...", "color: cyan; font-weight: bold;");
+
+console.log("1. Checking HTML Elements:");
+console.log("- cardgrid:", grid);
+console.log("- cardlist:", listElement);
+console.log("- cardtemplate:", templateElement);
+
+if (!grid || !listElement || !templateElement) {
+  console.error("❌ CRITICAL: One or more elements are completely missing from the HTML tree. Loop aborted.");
+} else {
+  try {
     const template = templateElement.innerHTML;
-    
-    // Split the cards using a basic string method
-    const cardData = listElement.textContent.split('---');
-    
-    cardData.forEach(item => {
+    console.log("2. Raw Template String Captured:", JSON.stringify(template));
+
+    const rawText = listElement.textContent;
+    console.log("3. Raw Data List Content:", JSON.stringify(rawText));
+
+    const cardData = rawText.split('---');
+    console.log(`4. Text broken down into (${cardData.length}) card blocks.`);
+
+    cardData.forEach((item, cardIdx) => {
+      console.log(`%c\n--- Analyzing Card Block #${cardIdx + 1} ---`, "color: yellow;");
+      console.log("Block data string:", JSON.stringify(item));
+      
       let html = template;
       const lines = item.split('\n');
-      
-      lines.forEach(line => {
-        if (!line.includes(':')) return;
-        
+      console.log(`Extracted (${lines.length}) separate text lines.`);
+
+      lines.forEach((line, lineIdx) => {
+        const cleanLine = line.trim();
+        if (!cleanLine) {
+          console.log(`Line ${lineIdx + 1}: Empty spacing. Skipping.`);
+          return;
+        }
+        if (!cleanLine.includes(':')) {
+          console.warn(`Line ${lineIdx + 1}: Text has no colon identifier ("${cleanLine}"). Skipping.`);
+          return;
+        }
+
         const colonIndex = line.indexOf(':');
         const key = line.substring(0, colonIndex).trim();
         let value = line.substring(colonIndex + 1).trim();
-        
-        // NO REGEX OR TOKENS: Uses basic character extraction to strip carriage bytes
+
+        // System carriage tracking check
         if (value.charCodeAt(value.length - 1) === 13) {
           value = value.substring(0, value.length - 1);
         }
+
+        const targetHandle = '{{' + key + '}}';
+        const hasHandle = html.includes(targetHandle);
         
-        html = html.replaceAll('{{' + key + '}}', value);
+        console.log(`Line ${lineIdx + 1}: Processed Pair -> [${key}]: "${value}"`);
+        if (!hasHandle) {
+          console.warn(`   ⚠️ Notice: Blueprint has no matching tag for "${targetHandle}". Value will not render.`);
+        }
+
+        html = html.replaceAll(targetHandle, value);
       });
+
+      console.log(`Final HTML package generated for Card #${cardIdx + 1}:`, JSON.stringify(html));
       
+      const beforeLength = grid.children.length;
       grid.insertAdjacentHTML('beforeend', html);
+      const afterLength = grid.children.length;
+
+      if (afterLength > beforeLength) {
+        console.log(`%c✅ SUCCESS: Card #${cardIdx + 1} injected inside the DOM layout.`, "color: green; font-weight: bold;");
+      } else {
+        console.error(`❌ FAILURE: HTML string failed to generate valid DOM elements inside the grid.`);
+      }
     });
+
+    console.log("%c\n--- Inspection Cycles Finalized ---", "color: cyan; font-weight: bold;");
+
+  } catch (fatalError) {
+    console.error("💥 FAILED EXECUTION: Loop generated a native engine crash:", fatalError);
   }
+}
 </script>
 
 <!--
