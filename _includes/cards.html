@@ -8,6 +8,54 @@
 </template>
 
 <script>
+    // 1. Grab elements
+  const grid = document.getElementById('cardgrid');
+  const listElement = document.getElementById('cardlist');
+  const templateElement = document.getElementById('cardtemplate');
+  
+  // 2. INSPECT DIAGNOSTIC LOGGER: Tells you exactly what element failed to load
+  console.log("--- CARD MACHINE DIAGNOSTIC CHECK ---");
+  console.log("Grid Container found:", grid);
+  console.log("Data List element found:", listElement);
+  console.log("Template blueprint found:", templateElement);
+
+  if (grid && listElement && templateElement) {
+    const template = templateElement.innerHTML;
+    
+    // Split text into individual card chunks by the markdown dashes
+    const cardData = listElement.textContent.split(/\n\s*---\s*\n/);
+    console.log("Found total card blocks to build:", cardData.length);
+    
+    cardData.forEach((item, index) => {
+      let html = template;
+      
+      // Split single card text into individual text lines
+      const lines = item.split('\n');
+      
+      lines.forEach(line => {
+        // Skip lines that aren't key-value layouts
+        if (!line.includes(':')) return;
+        
+        const colonIndex = line.indexOf(':');
+        const key = line.substring(0, colonIndex).trim();
+        
+        // Clean out spaces and any invisible Windows system carriage returns \((\r)\)
+        const value = line.substring(colonIndex + 1).trim().replace(\(/\r/\)g, '');
+        
+        // Globally swap variables
+        html = html.replaceAll(`{{${key}}}`, value);
+      });
+      
+      console.log(`Injecting Card #${index + 1} into grid markup...`);
+      grid.insertAdjacentHTML('beforeend', html);
+    });
+    console.log("--- MACHINE FINISHED RUNNING SUCCESSFULLY ---");
+  } else {
+    console.error("CRITICAL BREAK: One or more structural code assets are missing from your page layout. Card machine aborted.");
+  }
+</script>
+
+<script>
   const grid = document.getElementById('cardgrid');
     const listElement = document.getElementById('cardlist');
     const templateElement = document.getElementById('cardtemplate');
