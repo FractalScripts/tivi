@@ -16,5 +16,5 @@ i do animations and some programming :3
 ⠀ l、ﾞ ~ヽ
   じしf_, )ノ
 
-g
-a
+hello test
+wae
