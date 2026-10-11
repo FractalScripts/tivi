@@ -1,9 +1,13 @@
 # Some of my OCs
 ###### *Original Characters
 
-<div class="cardgrid">
-
-  <a href="/oc/tivi" class="card">
-  </a>
-
-</div>
+<template>
+  <div class="cardgrid">
+    <a href="/oc/{{file}}" class="card">
+      <div class="cardimg">
+        <img src="{{img}}">
+      </div>
+      <h2>{{name}}</h2>
+    </a>
+  </div>
+</template>
