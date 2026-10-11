@@ -18,11 +18,11 @@
       
       const cardData = listElement.textContent.split(/\n\s*---\s*\n/); // Regex match for dividers (===)
       
-      cardData.forEach(cardData => { // For each card
+      cardData.forEach(item => { // For each card
         
         let html = template; // Pull fresh template
         
-        const matches = cardData.matchAll(/^\s*([a-zA-Z0-9_-]+)\s*:\s*(.+)$/gm); // Regex match for key : value
+        const matches = item.matchAll(/^\s*([a-zA-Z0-9_-]+)\s*:\s*(.+)$/gm); // Regex match for key : value
         
         for (const match of matches) { // For each item in all matches
           const key = match[1].trim(); // Get and trim whitespace on KEY and VALUE
