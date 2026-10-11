@@ -15,11 +15,13 @@
   if (grid && listElement && templateElement) {
     const template = templateElement.innerHTML;
     
-    // Split the raw plain-text block into separate card content chunks
-    const cardData = listElement.textContent.split(/\n\s*---\s*\n/);
+    // Split the cards by looking for a clean line break with three dashes
+    const cardData = listElement.textContent.split('\n---');
     
     cardData.forEach(item => {
       let html = template;
+      
+      // Split the text into lines by normal newlines
       const lines = item.split('\n');
       
       lines.forEach(line => {
@@ -27,14 +29,14 @@
         
         const colonIndex = line.indexOf(':');
         const key = line.substring(0, colonIndex).trim();
+        let value = line.substring(colonIndex + 1).trim();
         
-        // Clean out spaces and hidden carriage lines cleanly with no extra symbols
-        const value = line.substring(colonIndex + 1).trim().replace(\(/\r/\)g, '');
+        // NO REGEX: Strip out invisible Windows carriage returns using simple text splitting
+        value = value.split\(('\r').\)join('');
         
         html = html.replaceAll(`{{${key}}}`, value);
       });
       
-      // Inject our customized card elements straight into the layout element
       grid.insertAdjacentHTML('beforeend', html);
     });
   }
