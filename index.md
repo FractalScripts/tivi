@@ -11,7 +11,7 @@ call me Tivi / Fractal
 
 i do animations and some programming :3
 
-⠀ ／l、\n
-（ﾟ､ ｡ ７\n
-⠀ l、ﾞ ~ヽ\n
-  じしf_, )ノ\n
+⠀ ／l、
+（ﾟ､ ｡ ７
+⠀ l、ﾞ ~ヽ<nl>
+  じしf_, )ノ
