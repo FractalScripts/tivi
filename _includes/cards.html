@@ -30,7 +30,7 @@
           html = html.replaceAll(`{{${key}}}`, value); // Replace all {{placeholders}} with values
           console.log(key, value);
         }
-        
+        console.log(html);
         grid.insertAdjacentHTML('beforeend', html); // Inject card into bottom of the grid
       });
     }
