@@ -1,13 +1,11 @@
-{% include socialbuttons.md %}
-
----
-
 ## <img src="{{ '/assets/content/tivi.png' | relative_url }}" width="200"> hii! welcome
 
 call me Tivi / Fractal
 ###### i also go by ItsTivi / TiviAnimations / FractalBlade online
 
 ---
+
+{% include socialbuttons.md %}
 
 i do animations and some programming :3
 
