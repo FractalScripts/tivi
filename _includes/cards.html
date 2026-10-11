@@ -29,6 +29,8 @@
           const value = match[2].trim();
           html = html.replaceAll(`{{${key}}}`, value); // Replace all {{placeholders}} with values
         }
+
+        console.log(data);
         
         grid.insertAdjacentHTML('beforeend', html); // Inject card into bottom of the grid
       });
