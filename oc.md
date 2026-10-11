@@ -1,7 +1,7 @@
 # Some of my OCs
 ###### *Original Characters
 
-<pre>
+<pre class="cardlist" id="cardlist">
   name: Tivi (OC)
   path: /oc/tivi
 </pre>
