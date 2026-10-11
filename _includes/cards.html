@@ -1,0 +1,36 @@
+<template id="cardtemplate">
+  <a href="/oc/{{file}}" class="card">
+    <div class="cardimg">
+      <img src="{{img}}">
+    </div>
+    <h2>{{name}}</h2>
+  </a>
+</template>
+
+<script>
+  const grid = document.getElementById('cardgrid');
+    const listElement = document.getElementById('cardlist');
+    const templateElement = document.getElementById('cardtemplate');
+    
+    if (grid && listElement && templateElement) { // If all items existent
+      
+      const template = templateElement.innerHTML; // Get template as string
+      
+      const cardData = listElement.textContent.split(/\n\s*---\s*\n/); // Regex match for dividers (===)
+      
+      cardData.forEach(cardData => { // For each card
+        
+        let html = template; // Pull fresh template
+        
+        const matches = cardData.matchAll(/^\s*([a-zA-Z0-9_-]+)\s*:\s*(.+)$/gm); // Regex match for key : value
+        
+        for (const match of matches) { // For each item in all matches
+          const key = match[1].trim(); // Get and trim whitespace on KEY and VALUE
+          const value = match[2].trim();
+          html = html.replaceAll(`{{${key}}}`, value); // Replace all {{placeholders}} with values
+        }
+        
+        grid.insertAdjacentHTML('beforeend', html); // Inject card into bottom of the grid
+      });
+    }
+</script>
