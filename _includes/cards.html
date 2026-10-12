@@ -27,6 +27,8 @@
         for (const match of matches) { // For each item in all matches
           const key = match[1].trim(); // Get and trim whitespace on KEY and VALUE
           const value = match[2].trim();
+          console.log('HTML before:', JSON.stringify(html));
+          console.log('Search:', JSON.stringify('{{' + key + '}}'));
           html = html.replaceAll("{{" + key + "}}", value); // Replace all {{placeholders}} with values
         }
         
