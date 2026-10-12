@@ -1,9 +1,9 @@
 <template id="cardtemplate">
-  <a href="{{path}}" class="card">
+  <a href="[[path]]" class="card">
     <div class="cardimg">
-      <img src="{{img}}">
+      <img src="[[img]]">
     </div>
-    <h2>{{name}}</h2>
+    <h2>[[name]]</h2>
   </a>
 </template>
 
@@ -28,8 +28,8 @@
           const key = match[1].trim(); // Get and trim whitespace on KEY and VALUE
           const value = match[2].trim();
           console.log('HTML before:', JSON.stringify(html));
-          console.log('Search:', JSON.stringify('{{' + key + '}}'));
-          html = html.replaceAll("{{" + key + "}}", value); // Replace all {{placeholders}} with values
+          console.log('Search:', JSON.stringify('[[' + key + ']]'));
+          html = html.replaceAll("[[" + key + "]]", value); // Replace all {{placeholders}} with values
         }
         
         grid.insertAdjacentHTML("beforeend", html); // Inject card into bottom of the grid
