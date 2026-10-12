@@ -1,7 +1,11 @@
-## <img src="{{ '/assets/content/tivi.png' | relative_url }}" width="200"> hii! welcome
-
-call me Tivi / Fractal
-###### i also go by ItsTivi / TiviAnimations / FractalBlade online
+<div style="display: flex; gap: 10px;">
+  <img src="{{ '/assets/content/tivi.png' | relative_url }}" width="200">
+  <div>
+    <h2>hii! welcome</h2>
+    call me Tivi / Fractal
+    <h6>i also go by ItsTivi / TiviAnimations / FractalBlade online</h6>
+  </div>
+</div>
 
 ---
 
