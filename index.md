@@ -6,11 +6,8 @@
     <h6>i also go by ItsTivi / TiviAnimations / FractalBlade online</h6>
   </div>
 </div>
-
----
-
 {% include socialbuttons.md %}
-
+---
 i do animations and some programming :3
 
 chronically online
