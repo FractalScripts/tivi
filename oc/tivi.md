@@ -1,6 +1,6 @@
 ---
 title: "OC: Tivi"
 ---
-{{ include back.md }}
+{% include back.md %}
 
 WIP
