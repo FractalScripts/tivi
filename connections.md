@@ -1,12 +1,11 @@
 ---
 title: Connections
 ---
-## socials / content :0
+## Socials
 {% include socialbuttons.md %}
-<a href="https://toyhou.se/FractalBlade" class="button purple">Toyhou.se (For random stuff, may migrate)</a>
 
 ---
-## games :3
+## Games :3
 <details><summary>Minecraft username</summary>
 <button class="button" onclick="copyText(this, 'itstivi')">Java edition</button>
 <button class="button" onclick="copyText(this, 'HYPIX9000')">Bedrock edition</button>
