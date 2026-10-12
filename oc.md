@@ -1,3 +1,6 @@
+---
+title: OCs
+---
 # Some of my OCs
 ###### *Original Characters
 
