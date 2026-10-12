@@ -1,6 +1,6 @@
 ---
 title: "OC: Horizon"
 ---
-{{ include back.md }}
+{% include back.md %}
 
 WIP
