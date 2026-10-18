@@ -2,7 +2,7 @@
   <img src="{{ '/assets/content/tivi.png' | relative_url }}" width="200">
   <div>
     <h2>hii! welcome</h2>
-    call me Tivi / Fractal
+    call me Tivi / Fractal / Jade
     <h6>i also go by ItsTivi / TiviAnimations / FractalBlade online</h6>
   </div>
 </div>
