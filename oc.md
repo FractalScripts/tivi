@@ -5,8 +5,9 @@ title: OCs
 ###### *Original Characters
 
 <pre class="cardlist" id="cardlist">
-  name: Tivi (OC)
+  name: Tivi
   path: /oc/tivi
+  img: /assets/content/tivi2.png
   ---
   name: Horizon
   path: /oc/horizon
